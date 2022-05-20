@@ -17,7 +17,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 output application/json
 ---
 {
-	"data" : "app deployed successfully"
+	"data" : p("cicd.welcome.message")
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
