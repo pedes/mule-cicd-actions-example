@@ -41,6 +41,9 @@
 						<persistentQueues>false</persistentQueues>
 						<workers>1</workers>
 						<workerType>SMALL</workerType>
+						<properties>
+						  <cicd.welcome.message>${cicd.welcome.message}</cicd.welcome.message>
+					        </properties>
 					</cloudHubDeployment>
 					<classifier>mule-application</classifier>
 				</configuration>
