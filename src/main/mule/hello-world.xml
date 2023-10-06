@@ -10,14 +10,15 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="helloworld-flow" doc:id="80d14501-6432-48ea-b45f-d6e29759a9eb" >
-		<http:listener doc:name="GET helloworld" doc:id="fadcdb94-743a-48c5-af95-98fd7542e848" config-ref="HTTP_Listener_config" path="/helloworld" allowedMethods="GET"/>
+		<http:listener doc:name="GET helloworld" doc:id="fadcdb94-743a-48c5-af95-98fd7542e848" config-ref="HTTP_Listener_config" path="/hello" allowedMethods="GET"/>
 		<ee:transform doc:name="Transform Message" doc:id="d89c0f8b-7391-411c-91a6-86500bf3863a" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
 {
-	"data" : p("cicd.welcome.message")
+	"user" : p("user.name"),
+	"message" : p("cicd.welcome.message")
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
